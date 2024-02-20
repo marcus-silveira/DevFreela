@@ -6,6 +6,10 @@ namespace DevFreela.Api.Controllers;
 [Route("api/users")]
 public class UsersController : ControllerBase
 {
+    public UsersController(ExampleClass exampleClass)
+    {
+        // exampleClass.Name = "Update at UsersController";
+    }
     [HttpGet("{id:int}")]
     public IActionResult GetById(int id)
     {

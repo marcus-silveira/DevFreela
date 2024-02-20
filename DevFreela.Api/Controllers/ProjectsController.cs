@@ -1,11 +1,20 @@
 using DevFreela.Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace DevFreela.Api.Controllers;
 
 [Route("api/projects")]
 public class ProjectsController : ControllerBase
 {
+    private readonly OpeningTimeOption _openingTimeOption;
+
+    public ProjectsController(IOptions<OpeningTimeOption> options, ExampleClass exampleClass)
+    {
+        exampleClass.Name = "Update at ProjectsController";
+        _openingTimeOption = options.Value;
+    }
+
     [HttpGet]
     public IActionResult Get(string query)
     {
@@ -25,13 +34,13 @@ public class ProjectsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = createProject.Id }, createProject);
     }
 
-    
+
     [HttpPut("{id:int}")]
     public IActionResult Put(int id, [FromBody] CreateProjectModel createProject)
     {
         return Ok();
     }
-    
+
     [HttpDelete("{id:int}")]
     public IActionResult Delete(int id)
     {
