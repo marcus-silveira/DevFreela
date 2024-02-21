@@ -1,6 +1,6 @@
 ﻿namespace DevFreela.Core;
 
-public class ass1
+public class Repositories
 {
-
+    
 }
