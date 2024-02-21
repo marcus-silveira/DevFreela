@@ -7,10 +7,12 @@ public class ProjectComment : BaseEntity
         IdProject = idProject;
         Content = content;
         IdUser = idUser;
+
+        CreatedAt = DateTime.Now;
     }
 
-    public string Content { get; }
-    public int IdProject { get; }
-    public int IdUser { get; }
-    public DateTime CreatedAt { get; }
+    public string Content { get; private set; }
+    public int IdProject { get; private set; }
+    public int IdUser { get; private set; }
+    public DateTime CreatedAt { get; private set; }
 }

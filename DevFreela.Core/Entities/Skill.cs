@@ -8,6 +8,6 @@ public class Skill : BaseEntity
         CreatedAt = createdAt;
     }
 
-    public string Description { get; }
-    public DateTime CreatedAt { get; set; }
+    public string Description { get; private set; }
+    public DateTime CreatedAt { get; private set; }
 }
