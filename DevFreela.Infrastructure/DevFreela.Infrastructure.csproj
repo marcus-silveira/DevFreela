@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="Class1.cs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Services\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DevFreela.Api\DevFreela.Api.csproj"/>
+        <ProjectReference Include="..\DevFreela.Core\DevFreela.Core.csproj"/>
+    </ItemGroup>
+
+</Project>

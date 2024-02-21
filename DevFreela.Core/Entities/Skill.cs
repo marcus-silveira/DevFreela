@@ -2,10 +2,10 @@
 
 public class Skill : BaseEntity
 {
-    public Skill(string description, DateTime createdAt)
+    public Skill(string description)
     {
         Description = description;
-        CreatedAt = createdAt;
+        CreatedAt = DateTime.Now;
     }
 
     public string Description { get; private set; }

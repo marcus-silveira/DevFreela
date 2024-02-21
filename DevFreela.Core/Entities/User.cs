@@ -2,7 +2,7 @@
 
 public class User : BaseEntity
 {
-    public User(DateTime birthDateTime, string fullName, string email)
+    public User(string fullName, string email, DateTime birthDateTime)
     {
         FullName = fullName;
         Email = email;
