@@ -1,6 +1,0 @@
-﻿namespace DevFreela.Core;
-
-public class ass1
-{
-
-}
