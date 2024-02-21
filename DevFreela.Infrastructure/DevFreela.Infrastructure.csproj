@@ -11,10 +11,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Services\"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\DevFreela.Api\DevFreela.Api.csproj"/>
         <ProjectReference Include="..\DevFreela.Core\DevFreela.Core.csproj"/>
     </ItemGroup>
