@@ -10,12 +10,12 @@ public class UsersController : ControllerBase
     {
         // exampleClass.Name = "Update at UsersController";
     }
+
     [HttpGet("{id:int}")]
     public IActionResult GetById(int id)
     {
         return Ok();
     }
-
 
     // api/users
     [HttpPost]
