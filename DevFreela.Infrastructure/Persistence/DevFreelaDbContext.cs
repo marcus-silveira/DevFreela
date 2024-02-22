@@ -23,4 +23,10 @@ public class DevFreelaDbContext
         new Skill("Python"),
         new Skill("PHP")
     };
+
+    public List<ProjectComment> ProjectComments { get; set; } = new()
+    {
+        new ProjectComment(1, 1, "The project was excellent"),
+        new ProjectComment(1, 2, "Thank You")
+    };
 }
