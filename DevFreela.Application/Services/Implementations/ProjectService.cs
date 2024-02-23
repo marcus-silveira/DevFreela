@@ -24,9 +24,10 @@ public class ProjectService : IProjectService
         return projectsViewModel;
     }
 
-    public ProjectDetailsViewModel GetById(int id)
+    public ProjectDetailsViewModel? GetById(int id)
     {
         var project = _dbContext.Projects.SingleOrDefault(project => project.Id == id);
+        if (project == null) return null;
         var projectDetails = new ProjectDetailsViewModel(project.Id, project.Title, project.Description,
             project.TotalCost, project.StartedAt, project.FinishedAt);
 
