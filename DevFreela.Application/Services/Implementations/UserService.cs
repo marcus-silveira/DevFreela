@@ -15,9 +15,11 @@ public class UserService : IUserService
         _dbContext = dbContext;
     }
 
-    public UserViewModel GetUser(int id)
+    public UserViewModel? GetUser(int id)
     {
         var user = _dbContext.Users.SingleOrDefault(user => user.Id == id);
+        if (user is null) return null;
+        
         var userViewModel = new UserViewModel(user.FullName, user.Email);
 
         return userViewModel;
