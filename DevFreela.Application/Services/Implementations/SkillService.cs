@@ -1,6 +1,6 @@
 ﻿using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
-using DevFreela.Infra.Persistence;
+using DevFreela.Infra.DataBase.Context;
 
 namespace DevFreela.Application.Services.Implementations;
 
