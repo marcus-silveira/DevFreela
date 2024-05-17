@@ -38,11 +38,9 @@ public class Project : BaseEntity
 
     public void Start()
     {
-        if (Status == ProjectStatusEnum.Created)
-        {
-            Status = ProjectStatusEnum.InProgress;
-            StartedAt = DateTime.Now;
-        }
+        if (Status != ProjectStatusEnum.Created) return;
+        Status = ProjectStatusEnum.InProgress;
+        StartedAt = DateTime.Now;
     }
 
     public void Finish()

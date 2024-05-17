@@ -1,5 +1,7 @@
 using System.Reflection;
+using DevFreela.Core.Repositories;
 using DevFreela.Infra.DataBase.Context;
+using DevFreela.Infra.DataBase.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<SkillRepository, SkillRepository>();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
