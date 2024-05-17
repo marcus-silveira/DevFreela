@@ -2,11 +2,11 @@
 
 public class User : BaseEntity
 {
-    public User(string fullName, string email, DateTime birthDateTime)
+    public User(string fullName, string email, DateTime birthDate)
     {
         FullName = fullName;
         Email = email;
-        BirthDate = birthDateTime;
+        BirthDate = birthDate;
         Active = true;
         CreatedAt = DateTime.Now;
         Skills = new List<UserSkill>();
