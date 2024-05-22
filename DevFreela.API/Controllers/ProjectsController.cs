@@ -7,11 +7,13 @@ using DevFreela.Application.Commands.UpdateProject;
 using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Application.Queries.GetProjectById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevFreela.API.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/projects")]
 public class ProjectsController : ControllerBase
 {
@@ -89,6 +91,7 @@ public class ProjectsController : ControllerBase
     }
 
     [HttpPut("{id}/finish")]
+    [Authorize(Roles = "client")]
     public async Task<IActionResult> Finish(int id)
     {
         var command = new FinishProjectCommand(id);

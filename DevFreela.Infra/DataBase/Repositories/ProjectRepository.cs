@@ -26,12 +26,6 @@ public class ProjectRepository(DevFreelaDbContext dbContext) : RepositoryBase<Pr
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task StartAsync(Project project, CancellationToken cancellationToken)
-    {
-        project.Start();
-        await _dbContext.SaveChangesAsync(cancellationToken);
-    }
-
     public async Task AddCommentAsync(ProjectComment projectComment, CancellationToken cancellationToken)
     {
         await _dbContext.ProjectComments.AddAsync(projectComment, cancellationToken);
